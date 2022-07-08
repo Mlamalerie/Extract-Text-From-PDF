@@ -1,3 +1,21 @@
+import os
+import re
+import glob
+import logging
+from PIL import Image
+import pytesseract
+import concurrent.futures
+import time
+import shutil
+from difflib import SequenceMatcher
+from itertools import repeat
+from pdf2image import convert_from_path
+from param import *
+
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+IR_PATH = r"G:\Mon Drive"
+POPPLER_PATH = r"G:\Drive partagés\# Zone de Code #\LOCAL\HichimaPFE\poppler-0.68.0\bin"
+
 class ReadPDF():
 
    def __init__(self,pdf_file,nb_pages = 1):
