@@ -25,7 +25,8 @@ class ReadPDF():
       self.nb_pages = nb_pages
 
    def run(self):
-      self.dirname = create_dir(create_dir("retrieve"),"%s" % (os.path.basename(self.pdf_file)))
+      self.dirname = create_dir(create_dir("retrieve"),
+                                f"{os.path.basename(self.pdf_file)}")
 
       for page in self.pages:
          fname = os.path.join(self.dirname,f"page_{self.image_counter}.jpg")
